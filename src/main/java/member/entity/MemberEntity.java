@@ -44,11 +44,11 @@ public class MemberEntity {
         //1.'클라이언트'로부터 'DTO 객체'를 받아서
         //2.'DTO 객체 속 값'을 '꺼내어' ' Entity 객체'로 '옮겨 담아주는' 과정임
         MemberEntity memberEntity = new MemberEntity();
-        memberEntity.setMemberEmail(memberDTO.getMemberEmail);
-        memberEntity.setMemberPassword(memberDTO.getMemberPassword);
-        memberEntity.setMemberName(memberDTO.getMembername);
-        memberEntity.setMemberAge(memberDTO.getMemberAge);
-        memberEntity.setMemberMobile(memberDTO.getMemberMobile);
+        memberEntity.setMemberEmail(memberDTO.getMemberEmail());
+        memberEntity.setMemberPassword(memberDTO.getMemberPassword());
+        memberEntity.setMemberName(memberDTO.getMemberName());
+        memberEntity.setMemberAge(memberDTO.getMemberAge());
+        memberEntity.setMemberMobile(memberDTO.getMemberMobile());
 
         return memberEntity;
 
