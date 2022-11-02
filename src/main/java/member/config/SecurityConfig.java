@@ -1,7 +1,7 @@
 package member.config;
 
-import com.victolee.signuplogin.service.MemberService;
 import lombok.AllArgsConstructor;
+import member.service.MemberService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

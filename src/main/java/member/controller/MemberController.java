@@ -2,8 +2,10 @@ package member.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import member.dto.MemberDTO;
+import member.dto.MemberDto;
+import member.repository.MemberRepository;
 import member.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequiredArgsConstructor
 
 public class MemberController {
+
+    @Autowired
+    private MemberRepository memberRepository;
+
+    @Autowired
     private MemberService memberService;
 
     // 메인 페이지
@@ -29,7 +36,7 @@ public class MemberController {
 
     // 회원가입 처리
     @PostMapping("/user/signup")
-    public String execSignup(MemberDTO memberDto) {
+    public String execSignup(MemberDto memberDto) {
         memberService.joinUser(memberDto);
 
         return "redirect:/user/login";

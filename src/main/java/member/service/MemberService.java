@@ -1,10 +1,10 @@
 package member.service;
 
-import com.victolee.signuplogin.domain.Role;
 import lombok.AllArgsConstructor;
-import member.dto.MemberDTO;
+import member.dto.MemberDto;
 import member.entity.MemberEntity;
 import member.repository.MemberRepository;
+import member.repository.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -25,7 +25,7 @@ public class MemberService implements UserDetailsService {
     private MemberRepository memberRepository;
 
     @Transactional
-    public Long joinUser(MemberDTO memberDto) {
+    public Long joinUser(MemberDto memberDto) {
         // 비밀번호 암호화
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         memberDto.setPassword(passwordEncoder.encode(memberDto.getPassword()));
