@@ -2,6 +2,7 @@ package member.controller;
 
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import member.dto.MemberDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,12 +15,14 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequiredArgsConstructor //생성자 주입
 @RequestMapping("/member") //이제 'URL 요청이 /member로 들어오는 것'은 다 아래 컨트롤러가 처리한다.
+@Slf4j
 public class MemberController {
 
     private final member.service.MemberService memberService;
 
     @GetMapping("/save-form") //'회원가입 폼' 띄워주는 것.
     public String saveForm() {
+
 
         return "memberPage/save";
     }
