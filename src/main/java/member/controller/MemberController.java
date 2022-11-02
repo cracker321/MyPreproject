@@ -25,16 +25,19 @@ public class MemberController {
     // 메인 페이지
     @GetMapping("/")
     public String index() {
+
         return "/index";
     }
 
-    // 회원가입 페이지
+    // 회원가입 페이지(=회원가입 폼)
+    //https://cjw-awdsd.tistory.com/35 참고
     @GetMapping("/user/signup")
     public String dispSignup() {
+
         return "/signup";
     }
 
-    // 회원가입 처리
+    // 회원가입 처리(=회원가입 진행)
     @PostMapping("/user/signup")
     public String execSignup(MemberDto memberDto) {
         memberService.joinUser(memberDto);
@@ -45,6 +48,7 @@ public class MemberController {
     // 로그인 페이지
     @GetMapping("/user/login")
     public String dispLogin() {
+
         return "/login";
     }
 
@@ -57,24 +61,28 @@ public class MemberController {
     // 로그아웃 결과 페이지
     @GetMapping("/user/logout/result")
     public String dispLogout() {
+
         return "/logout";
     }
 
     // 접근 거부 페이지
     @GetMapping("/user/denied")
     public String dispDenied() {
+
         return "/denied";
     }
 
     // 내 정보 페이지
     @GetMapping("/user/info")
     public String dispMyInfo() {
+
         return "/myinfo";
     }
 
     // 어드민 페이지
     @GetMapping("/admin")
     public String dispAdmin() {
+
         return "/admin";
     }
 }
